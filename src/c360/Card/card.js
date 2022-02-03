@@ -111,6 +111,7 @@ class C360Card extends ReactiveElement {
           this.shadowRoot.insertBefore(newImage, oldImage)
           this.shadowRoot.removeChild(oldImage)
         } else {
+          /* This seems fragile. What if we change the order of elements? But not sure what best practice would be. */
           const content = this.shadowRoot.querySelector('.content')
           this.shadowRoot.insertBefore(newImage, content)
         }

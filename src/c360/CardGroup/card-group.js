@@ -19,6 +19,14 @@ class C360CardGroup extends ReactiveElement {
     })
   }
 
+  getHeadlineFragment(title) {
+    return fragmentFrom.html`
+      <c360-headline level="h1" size="x-large">
+        <span class="title">${title}</span>
+      </c360-headline>
+    `
+  }
+
   get [template]() {
     const { title } = this[state]
     const result = templateFrom.html`
@@ -28,11 +36,7 @@ class C360CardGroup extends ReactiveElement {
     `
 
     if (title !== '') {
-      const titleFragment = fragmentFrom.html`
-      <c360-headline level="h1" size="x-large">
-        <span class="title">${title}</span>
-      </c360-headline>
-      `
+      const titleFragment = this.getHeadlineFragment(title)
       result.content.append(titleFragment)
     }
 
@@ -49,11 +53,7 @@ class C360CardGroup extends ReactiveElement {
       let titleElement = this.shadowRoot.querySelector('c360-headline')
       if (title !== '') {
         if (!titleElement) {
-          titleElement = fragmentFrom.html`
-          <c360-headline level="h1" size="x-large">
-            <span class="title">${title}</span>
-          </c360-headline>
-          `
+          titleElement = this.getHeadlineFragment(title)
           this.shadowRoot.insertBefore(titleElement, this.shadowRoot.firstChild)
         }
         titleElement.innerHTML = title;
