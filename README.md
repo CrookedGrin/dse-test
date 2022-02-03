@@ -1,6 +1,6 @@
-# Salesforce Design System Engineering Test
+# ***** Design System Engineering Test
 
-Hello, and welcome to our developer test! Thank you for considering the Salesforce Design System team for your next career opportunity.
+Hello, and welcome to our developer test! Thank you for considering the **** Design System team for your next career opportunity.
 
 ## Code Challenge Goals
 
