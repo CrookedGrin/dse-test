@@ -1,3 +1,14 @@
-div {
-  border: 1px solid #333;
+:host {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: var(--sds-g-spacing-large);
+}
+
+.group {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  align-items: flex-start; /* Remove to make cards equal height */
+  gap: var(--sds-g-spacing-small);
 }

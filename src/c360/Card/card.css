@@ -1,3 +1,48 @@
-div {
-  border: 1px solid #333;
+* {
+  box-sizing: border-box;
+}
+
+:host {
+  /* 
+  Note: the color in the mockups is #F5F2F2, which doesn't match any of the tokens.
+  I'm assuming that's an artifact of the export process here, but would ask the designer.
+  */
+  display: block;
+  background: var(--sds-g-color-neutral-base-2);
+  padding: var(--sds-g-spacing-medium);
+}
+
+.title {
+  display: block;
+  color: var(--sds-g-color-brand-base-contrast-3);
+  font-weight: 600;
+  margin-bottom: var(--sds-g-spacing-small);
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3; /* This is valid css: https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio */
+  background: var(--sds-g-color-neutral-base-3);
+  padding: 0;
+  margin-bottom: var(--sds-g-spacing-small);
+}
+
+slot {
+  display: block;
+  padding: 0;
+  margin-bottom: var(--sds-g-spacing-medium);
+  font-size: var(--sds-g-font-size-5);
+}
+
+::slotted(p) {
+  font-size: var(--sds-g-font-size-5);
+  margin: 0 0 var(--sds-g-spacing-small);
+  padding: 0;
+}
+
+::part(button) {
+  /* Likewise, the mockup color is #245B9E, which is not a token. Picked the closest looking one. */
+  background: var(--sds-g-color-brand-base-contrast-3);
+  text-transform: uppercase;
 }
